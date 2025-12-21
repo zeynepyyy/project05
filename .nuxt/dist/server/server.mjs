@@ -1,0 +1,1 @@
+export { default } from "file:///C:/Users/V%C4%B0CTUS/OneDrive/Desktop/Etsy-clean%20-%20Kopya%20-%20Kopya/node_modules/@nuxt/vite-builder/dist/runtime/vite-node.mjs"
