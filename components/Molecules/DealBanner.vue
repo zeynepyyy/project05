@@ -17,7 +17,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 const stockingsImageUrl =
   'https://i.etsystatic.com/9493132/r/il/170dad/7245003621/il_fullxfull.7245003621_qidd.jpg'
 </script>

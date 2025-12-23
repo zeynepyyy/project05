@@ -5,8 +5,8 @@
   </button>
 </template>
 
-<script setup>
-import { defineProps } from 'vue'
+<script setup lang="ts">
+
 // Atomu import edin
 import SocialImage from '../Atoms/SocialImage.vue'
 

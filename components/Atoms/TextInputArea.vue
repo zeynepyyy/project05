@@ -2,8 +2,8 @@
   <textarea :id="id" :placeholder="placeholder" rows="2" class="text-input-area-atom"></textarea>
 </template>
 
-<script setup>
-import { defineProps } from 'vue'
+<script setup lang="ts">
+
 
 const props = defineProps({
   id: String,

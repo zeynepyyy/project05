@@ -9,7 +9,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import Heading from '../Atoms/HeadingH.vue'
 import Paragraph from '../Atoms/ParagraphH.vue'
 </script>

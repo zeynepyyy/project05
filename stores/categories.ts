@@ -1,10 +1,17 @@
 import { defineStore } from 'pinia';
 import { collection, getDocs } from 'firebase/firestore';
+import { useNuxtApp } from '#app';
+
+interface CategoryGridItem {
+  id: string;
+  order?: number;
+  [key: string]: any;
+}
 
 export const useCategoriesStore = defineStore('categories', {
   state: () => ({
     categories: [] as any[], // Keep for generic usage if needed
-    categoryGrid: [] as any[], // Homepage grid items
+    categoryGrid: [] as CategoryGridItem[], // Homepage grid items
     megaMenuCategories: [] as any[], // Top nav dropdown categories
     loading: false,
     error: null as string | null
@@ -14,9 +21,9 @@ export const useCategoriesStore = defineStore('categories', {
     async fetchCategoryGrid() {
       this.loading = true;
       try {
-        const { $db } = useNuxtApp() as any;
+        const { $db } = useNuxtApp();
         const querySnapshot = await getDocs(collection($db, 'category_grid'));
-        const items = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+        const items = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() })) as CategoryGridItem[];
         // Sort by order
         this.categoryGrid = items.sort((a, b) => (a.order || 0) - (b.order || 0));
       } catch (err: any) {
@@ -30,7 +37,7 @@ export const useCategoriesStore = defineStore('categories', {
     async fetchMegaMenu() {
         this.loading = true;
         try {
-          const { $db } = useNuxtApp() as any;
+          const { $db } = useNuxtApp();
           // We can't guarantee order from Firestore without an index and orderBy clause,
           // but for now we'll fetch and might sort client side if we added an order field,
           // or rely on a hardcoded mapped order if critical.

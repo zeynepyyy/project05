@@ -6,13 +6,13 @@
       :id="inputId"
       :type="inputType"
       :value="modelValue"
-      @input="$emit('update:modelValue', $event.target.value)"
+      @input="$emit('update:modelValue', ($event.target as HTMLInputElement).value)"
     />
   </div>
 </template>
 
-<script setup>
-import { defineProps, defineEmits } from 'vue'
+<script setup lang="ts">
+
 
 const props = defineProps({
   inputId: String,

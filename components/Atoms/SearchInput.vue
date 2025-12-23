@@ -4,12 +4,12 @@
     placeholder="Search for anything"
     class="search-input-atom"
     :value="modelValue"
-    @input="$emit('update:modelValue', $event.target.value)"
+    @input="$emit('update:modelValue', ($event.target as HTMLInputElement).value)"
     @keydown.enter="$emit('search')"
   />
 </template>
 
-<script setup>
+<script setup lang="ts">
 defineProps(['modelValue'])
 defineEmits(['update:modelValue', 'search'])
 </script>

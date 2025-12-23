@@ -4,7 +4,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import HubTitleArea from '../Molecules/HubTitleArea.vue'
 </script>
 

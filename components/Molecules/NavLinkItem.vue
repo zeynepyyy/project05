@@ -7,8 +7,8 @@
   </NavLink>
 </template>
 
-<script setup>
-import { defineProps } from 'vue'
+<script setup lang="ts">
+
 // Atomları import edin
 import NavLink from '../Atoms/NavLink.vue'
 import BaseIcon from '../Atoms/BaseIcon.vue'

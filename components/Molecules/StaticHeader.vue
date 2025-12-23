@@ -5,7 +5,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import Heading from '../Atoms/Heading.vue'
 import PrimaryButton from '../Atoms/PrimaryButtonn.vue'
 </script>

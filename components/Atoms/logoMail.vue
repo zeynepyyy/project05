@@ -2,8 +2,8 @@
   <img :src="src" :alt="alt" :class="['base-logo', type]" />
 </template>
 
-<script setup>
-import { defineProps } from 'vue'
+<script setup lang="ts">
+
 
 const props = defineProps({
   src: String,

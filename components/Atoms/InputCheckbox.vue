@@ -2,8 +2,8 @@
   <input type="checkbox" :id="id" class="checkbox-atom" />
 </template>
 
-<script setup>
-import { defineProps } from 'vue'
+<script setup lang="ts">
+
 
 const props = defineProps({
   id: String,

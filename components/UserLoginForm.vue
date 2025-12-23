@@ -4,7 +4,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 // Organizmayı import edin (Dosya yolunuzu kontrol edin)
 import LoginFormOrganism from './Organism/LoginForm.vue'
 </script>

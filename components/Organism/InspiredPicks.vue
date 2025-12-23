@@ -14,8 +14,13 @@
       >
         <div class="inspired-image-wrapper">
           <img :src="item.image" :alt="item.title" />
-          <button class="favorite-btn-overlay">
-            <component :is="Heart" :size="20" />
+          <button class="favorite-btn-overlay" @click="(e) => toggleFavorite(e, item)">
+             <component 
+              :is="Heart" 
+              :size="20" 
+              :fill="isFavorite(item.id, item.title) ? '#f1641e' : 'none'"
+              :stroke="isFavorite(item.id, item.title) ? '#f1641e' : 'currentColor'"
+            />
           </button>
         </div>
         
@@ -38,9 +43,11 @@
 <script setup lang="ts">
 import { Heart, ChevronRight } from 'lucide-vue-next';
 import { useHomepageStore } from '~/stores/homepage';
+import { useFavoritesStore } from '~/stores/favorites';
 import { computed, onMounted } from 'vue';
 
 const store = useHomepageStore();
+const favoritesStore = useFavoritesStore();
 const sectionId = 'inspired-picks';
 
 onMounted(() => {
@@ -90,6 +97,30 @@ const items = computed(() => {
   const storeItems = store.sections[sectionId]?.items;
   return (storeItems && storeItems.length > 0) ? storeItems : fallbackItems;
 });
+
+const toggleFavorite = (e: Event, item: any) => {
+    e.preventDefault(); 
+    e.stopPropagation();
+    
+    const product = {
+        id: item.id || `inspired-${item.title.replace(/\s+/g, '-').toLowerCase()}`,
+        title: item.title,
+        description: '',
+        price: parseFloat(String(item.price).replace(/,/g, '')) || 0,
+        currency: 'TL',
+        imageUrl: item.image,
+        category: 'Inspired',
+        isHolidaySpecial: false
+    };
+    
+    favoritesStore.toggleFavorite(product);
+};
+
+const isFavorite = (itemId: string, itemTitle: string) => {
+    // Check both potential IDs incase one is missing
+    const id = itemId || `inspired-${itemTitle.replace(/\s+/g, '-').toLowerCase()}`;
+    return favoritesStore.isFavorite(id);
+};
 </script>
 
 <style scoped>

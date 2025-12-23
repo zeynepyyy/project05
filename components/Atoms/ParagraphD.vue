@@ -4,8 +4,8 @@
   </p>
 </template>
 
-<script setup>
-import { defineProps } from 'vue'
+<script setup lang="ts">
+
 
 const props = defineProps({
   // 'deal-subtext', 'seller-offer', 'housewarming-shop', 'campaign-discount'

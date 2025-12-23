@@ -8,8 +8,8 @@
   </div>
 </template>
 
-<script setup>
-import { defineProps } from 'vue'
+<script setup lang="ts">
+
 import PaymentCircle from '../Atoms/PaymentCircle.vue'
 
 const props = defineProps({

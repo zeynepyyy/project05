@@ -4,8 +4,8 @@
   </div>
 </template>
 
-<script setup>
-import { defineProps } from 'vue'
+<script setup lang="ts">
+
 
 const props = defineProps({
   // İkonun ana aksiyon (mor) renginde olup olmadığını belirler.

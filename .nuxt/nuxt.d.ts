@@ -1,5 +1,5 @@
-/// <reference types="@pinia/nuxt" />
 /// <reference types="@nuxt/devtools" />
+/// <reference types="@pinia/nuxt" />
 /// <reference types="@nuxt/telemetry" />
 /// <reference path="types/builder-env.d.ts" />
 /// <reference types="nuxt" />
@@ -8,7 +8,7 @@
 /// <reference path="types/build.d.ts" />
 /// <reference path="types/schema.d.ts" />
 /// <reference path="types/app.config.d.ts" />
-/// <reference types="C:/Users/VİCTUS/OneDrive/Desktop/Etsy-clean - Kopya - Kopya/node_modules/@nuxt/nitro-server/dist/index.mjs" />
+/// <reference types="C:/Users/VİCTUS/OneDrive/Desktop/Etsy-clean - Kopya - Kopya - Kopya/node_modules/@nuxt/nitro-server/dist/index.mjs" />
 /// <reference types="@pinia/nuxt" />
 /// <reference types="vue-router" />
 /// <reference path="types/middleware.d.ts" />

@@ -3,11 +3,13 @@
     <div class="logo-box">
       <Logo src="/logo.png" alt="Etsy Logo" type="etsy" />
     </div>
-    <Button type="download">Download the Etsy App</Button>
+    <a href="https://www.etsy.com/mobile" target="_blank" rel="noopener noreferrer" class="download-link">
+      <Button type="download">Download the Etsy App</Button>
+    </a>
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 // Atomları import edin
 import Logo from '../Atoms/logoMail.vue'
 import Button from '../Atoms/ButtonEtsy.vue'

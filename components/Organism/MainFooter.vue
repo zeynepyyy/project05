@@ -47,7 +47,7 @@
   </footer>
 </template>
 
-<script setup>
+<script setup lang="ts">
 // Atomları ve Molekülleri import edin
 import Spacer from '../Atoms/SpacerAdd.vue'
 import Link from '../Atoms/LinkMail.vue'

@@ -8,8 +8,8 @@
   </div>
 </template>
 
-<script setup>
-import { defineProps, defineEmits } from 'vue'
+<script setup lang="ts">
+
 import Heading from '../Atoms/HeadingD.vue'
 import Paragraph from '../Atoms/ParagraphD.vue'
 import ImageAtom from '../Atoms/ImageAtomD.vue'

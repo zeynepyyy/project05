@@ -10,7 +10,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 // Atomları ve Molekülleri import edin
 import AppLogo from '../Atoms/AppLogo.vue'
 import CategoryMenu from '../Organism/CategoryMenu.vue' // New import

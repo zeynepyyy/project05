@@ -206,7 +206,7 @@ import { useCartStore } from '~/stores/cart';
 import CheckoutModal from '~/components/Organism/CheckoutModal.vue';
 
 definePageMeta({
-    layout: 'default'
+    layout: 'cart'
 });
 
 const cartStore = useCartStore();

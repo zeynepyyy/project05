@@ -4,11 +4,11 @@
     placeholder="Enter your email"
     class="email-input"
     :value="modelValue"
-    @input="$emit('update:modelValue', $event.target.value)"
+    @input="$emit('update:modelValue', ($event.target as HTMLInputElement).value)"
   />
 </template>
 
-<script setup>
+<script setup lang="ts">
 defineProps(['modelValue'])
 defineEmits(['update:modelValue'])
 </script>

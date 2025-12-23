@@ -11,7 +11,7 @@
 
       <!-- Step 1: Initial (Email / Guest) -->
       <div v-if="step === 'email'" class="modal-body">
-        <button class="guest-btn">Continue as a guest</button>
+        <button class="guest-btn" @click="handleGuestCheckout">Continue as a guest</button>
 
         <div class="divider">
           <span>OR</span>
@@ -86,7 +86,7 @@
             <a href="#" class="reset-link">Reset password</a>
          </div>
 
-         <button class="continue-btn">Sign in</button>
+         <button class="continue-btn" @click="handleSignInAndOrder">Sign in</button>
 
          <div class="divider">
             <span>OR</span>
@@ -106,6 +106,9 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import { X } from 'lucide-vue-next';
+import { useCartStore } from '~/stores/cart';
+import { useAuthStore } from '~/stores/auth';
+import { useRouter } from 'vue-router';
 
 const props = defineProps<{
   isOpen: boolean;
@@ -113,21 +116,14 @@ const props = defineProps<{
 
 const emit = defineEmits(['close']);
 
+const cartStore = useCartStore();
+const authStore = useAuthStore();
+const router = useRouter();
+
 const step = ref<'email' | 'password'>('email');
 const email = ref('');
 const password = ref('');
 const emailError = ref(false);
-
-const handleContinue = () => {
-   if (email.value && email.value.includes('@')) {
-      step.value = 'password';
-      emailError.value = false;
-   } else {
-      // For demo, if empty just default to the user's demo email
-      if(!email.value) email.value = "z07929678@gmail.com";
-      step.value = 'password';
-   }
-};
 
 const close = () => {
   emit('close');
@@ -137,6 +133,71 @@ const close = () => {
      email.value = '';
      password.value = '';
   }, 300);
+};
+
+const handleGuestCheckout = async () => {
+    // 1. Create order with guest email (or default if empty for demo)
+    const guestEmail = email.value || 'guest@example.com';
+    
+    try {
+        await cartStore.createOrder({
+            email: guestEmail,
+            isGuest: true,
+            name: 'Guest User'
+        });
+        
+        // 2. Alert & Close
+        alert('Order created successfully as Guest!');
+        close();
+        router.push('/'); // Redirect to home
+    } catch (e) {
+        console.error(e);
+        alert('Failed to create order.');
+    }
+};
+
+const handleContinue = () => {
+   if (email.value && email.value.includes('@')) {
+      step.value = 'password';
+      emailError.value = false;
+   } else {
+      // If empty or invalid, treat as potential guest flow if user wants, 
+      // but for "Continue" (which implies Sign in flow), we usually validate.
+      // For this specific 'Etsy' flow, the first screen is "Sign In or Register",
+      // so we expect an email to check if it exists.
+      
+      // For DEMO purposes/User Request: if they just type an email and hit Enter, 
+      // we go to password step.
+      if(!email.value) {
+          // If completely empty, maybe just fill demo email
+          email.value = "z07929678@gmail.com";
+      }
+      step.value = 'password';
+   }
+};
+
+const handleSignInAndOrder = async () => {
+    // 1. Attempt login
+    try {
+        await authStore.login(email.value, password.value);
+        
+        // 2. Create order as logged in user
+        // We can get user info from authStore.user
+        if (authStore.user) {
+            await cartStore.createOrder({
+                uid: authStore.user.uid,
+                email: authStore.user.email,
+                name: authStore.user.displayName || 'Valued Customer',
+                isGuest: false
+            });
+            alert(`Welcome back ${authStore.user.displayName}! Order created successfully.`);
+            close();
+            router.push('/');
+        }
+    } catch (e: any) {
+        console.error(e);
+        alert('Login failed: ' + e.message);
+    }
 };
 </script>
 

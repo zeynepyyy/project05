@@ -1,14 +1,14 @@
 <template>
   <div class="option-group-molecule">
     <label :for="selectId">{{ labelText }}</label>
-    <FormSelect :id="selectId" @change="$emit('update:modelValue', $event.target.value)">
+    <FormSelect :id="selectId" @change="$emit('update:modelValue', ($event.target as HTMLSelectElement).value)">
       <slot></slot>
     </FormSelect>
   </div>
 </template>
 
-<script setup>
-import { defineProps, defineEmits } from 'vue'
+<script setup lang="ts">
+
 import FormSelect from '../Atoms/FormSelect.vue'
 
 const props = defineProps({

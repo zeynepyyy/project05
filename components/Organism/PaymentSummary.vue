@@ -31,7 +31,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 // Atomları import edin
 import ImageAtom from '../Atoms/ImageAtom.vue'
 import ActionButton from '../Atoms/ActionButton.vue'

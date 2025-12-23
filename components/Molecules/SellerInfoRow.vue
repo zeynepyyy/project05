@@ -6,7 +6,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import ImageAtom from '../Atoms/ImageAtomm.vue'
 </script>
 

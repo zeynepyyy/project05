@@ -1,7 +1,7 @@
 
 /// <reference path="app.config.d.ts" />
 /// <reference path="runtime-config.d.ts" />
-/// <reference types="C:/Users/VİCTUS/OneDrive/Desktop/Etsy-clean - Kopya - Kopya/node_modules/@nuxt/nitro-server/dist/index.mjs" />
+/// <reference types="C:/Users/VİCTUS/OneDrive/Desktop/Etsy-clean - Kopya - Kopya - Kopya/node_modules/@nuxt/nitro-server/dist/index.mjs" />
 /// <reference path="nitro-middleware.d.ts" />
 /// <reference path="./schema.d.ts" />
 

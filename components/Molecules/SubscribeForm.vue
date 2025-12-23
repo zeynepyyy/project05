@@ -8,7 +8,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref } from 'vue'
 // Atomları import edin (Dosya yollarını projenize göre ayarlayın)
 import InputEmail from '../Atoms/InputEmail.vue'

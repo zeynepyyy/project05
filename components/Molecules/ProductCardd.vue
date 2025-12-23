@@ -20,7 +20,7 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps, computed } from 'vue'
+import { computed } from 'vue'
 import ProductImage from '../Atoms/ProductImage.vue'
 import CardInfo from './CardInfo.vue'
 import AddToCartButton from '../Atoms/AddToCartButton.vue'

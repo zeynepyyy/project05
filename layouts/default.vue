@@ -14,7 +14,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 // Components are auto-imported in Nuxt 3
 import SideCartDrawer from '~/components/Organism/SideCartDrawer.vue'
 import AuthModal from '~/components/Organism/AuthModal.vue'

@@ -11,7 +11,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 // Atom ve Molekülleri import edin
 import Paragraph from '../Atoms/ParagraphAdd.vue'
 import SubscribeForm from '../Molecules/SubscribeForm.vue'

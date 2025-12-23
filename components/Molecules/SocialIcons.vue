@@ -7,7 +7,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 // Atomu ve ikonları import edin
 import SocialIcon from '../Atoms/SocialIcon.vue'
 // Lucide ikonları dışarıdan (Ana Organizma/Sayfa tarafından) sağlanacaktır

@@ -7,7 +7,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 const giftTagsImage = 'https://i.etsystatic.com/17199997/r/il/d1f3ca/6351705675/il_600x600.6351705675_b4pb.jpg' 
 // Ideally replace with the exact image from screenshot if available, but this is the existing one.
 </script>

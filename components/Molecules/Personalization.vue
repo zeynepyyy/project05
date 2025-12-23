@@ -14,8 +14,8 @@
   </div>
 </template>
 
-<script setup>
-import { defineProps, defineEmits } from 'vue'
+<script setup lang="ts">
+
 import TextInputArea from '../Atoms/TextInputArea.vue'
 
 const props = defineProps({

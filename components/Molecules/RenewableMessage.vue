@@ -5,7 +5,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 // Atomları import edin
 import Logo from '../Atoms/logoMail.vue'
 import Paragraph from '../Atoms/ParagraphAdd.vue'

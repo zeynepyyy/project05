@@ -7,8 +7,8 @@
   </div>
 </template>
 
-<script setup>
-import { defineProps, defineEmits } from 'vue'
+<script setup lang="ts">
+
 import ImageAtom from '../Atoms/ImageAtomm.vue'
 
 const props = defineProps({

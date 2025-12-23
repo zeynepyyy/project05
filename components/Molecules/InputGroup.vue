@@ -11,8 +11,8 @@
   </div>
 </template>
 
-<script setup>
-import { defineProps, defineEmits } from 'vue'
+<script setup lang="ts">
+
 // Atomu import edin (Dosya yolunu kontrol edin)
 import BaseInput from '../Atoms/BaseInput.vue'
 

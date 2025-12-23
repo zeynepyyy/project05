@@ -5,8 +5,8 @@
   </div>
 </template>
 
-<script setup>
-import { defineProps, defineEmits } from 'vue'
+<script setup lang="ts">
+
 import Image from '../Atoms/Image.vue'
 import PriceLabel from '../Atoms/PriceLabel.vue'
 

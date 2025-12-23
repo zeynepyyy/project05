@@ -5,8 +5,8 @@
   </ActionLinkButton>
 </template>
 
-<script setup>
-import { defineProps } from 'vue'
+<script setup lang="ts">
+
 import ActionLinkButton from '../Atoms/ActionLinkButton.vue'
 import SocialImage from '../Atoms/SocialImage.vue'
 

@@ -8,8 +8,8 @@
   </NuxtLink>
 </template>
 
-<script setup>
-import { defineProps } from 'vue'
+<script setup lang="ts">
+
 import ImageAtom from '../Atoms/ImageAtomH.vue'
 import LabelLink from '../Atoms/LabelLinkH.vue'
 

@@ -5,7 +5,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import SubscriptionSection from './Organism/SubscriptionSection.vue'
 import MainFooter from './Organism/MainFooter.vue'
 </script>

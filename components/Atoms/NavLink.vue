@@ -4,8 +4,8 @@
   </a>
 </template>
 
-<script setup>
-import { defineProps } from 'vue'
+<script setup lang="ts">
+
 
 const props = defineProps({
   href: {
@@ -42,8 +42,20 @@ const props = defineProps({
 }
 
 /* Alt Navigasyon Linkleri Stili */
+/* Alt Navigasyon Linkleri Stili */
 .nav-link-atom.main-nav {
   font-size: 0.9rem;
+  color: #222;
+  padding: 8px 16px;
+  border-radius: 24px;
+  background-color: transparent;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.nav-link-atom.main-nav:hover,
+.nav-link-atom.main-nav:active,
+.nav-link-atom.main-nav.router-link-active {
+  background-color: #ebebeb; /* Light gray */
   color: #222;
 }
 </style>

@@ -3,13 +3,13 @@
     :type="type"
     :id="inputId"
     :value="modelValue"
-    @input="$emit('update:modelValue', $event.target.value)"
+    @input="$emit('update:modelValue', ($event.target as HTMLInputElement).value)"
     class="base-input-atom"
   />
 </template>
 
-<script setup>
-import { defineProps, defineEmits } from 'vue'
+<script setup lang="ts">
+
 
 const props = defineProps({
   // email, password, checkbox (type attribute)

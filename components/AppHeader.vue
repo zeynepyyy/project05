@@ -7,7 +7,7 @@
   </header>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import TopHeaderRow from './Organism/TopHeaderRow.vue'
 import NavigationLinks from './Organism/NavigationLinks.vue'
 </script>

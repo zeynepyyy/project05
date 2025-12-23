@@ -3,11 +3,13 @@
     <AppHeader />
     <slot />
     <CartFooter />
+    <AuthModal />
   </div>
 </template>
 
 <script setup lang="ts">
 import CartFooter from '~/components/Organism/CartFooter.vue'
+import AuthModal from '~/components/Organism/AuthModal.vue'
 // AppHeader is auto-imported
 </script>
 

@@ -4,8 +4,8 @@
   </button>
 </template>
 
-<script setup>
-import { defineProps } from 'vue'
+<script setup lang="ts">
+
 
 const props = defineProps({
   type: { type: String, required: true },

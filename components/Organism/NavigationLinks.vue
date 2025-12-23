@@ -14,7 +14,7 @@
   </nav>
 </template>
 
-<script setup>
+<script setup lang="ts">
 // Molekülü ve ikonu import edin
 import NavLinkItem from '../Molecules/NavLinkItem.vue'
 import { Gift } from 'lucide-vue-next'

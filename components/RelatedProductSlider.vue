@@ -5,7 +5,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import CategorySliderSection from './Organism/CategorySliderSection.vue'
 import ProductSliderSection from './Organism/ProductSliderSection.vue'
 </script>

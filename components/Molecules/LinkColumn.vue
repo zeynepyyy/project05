@@ -5,8 +5,8 @@
   </div>
 </template>
 
-<script setup>
-import { defineProps } from 'vue'
+<script setup lang="ts">
+
 // Atomu import edin
 import Heading from '../Atoms/HeadingAdd.vue'
 

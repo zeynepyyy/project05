@@ -20,7 +20,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import ActionButton from '../Atoms/ActionButtonn.vue' // Doğru yolu kontrol edin
 </script>
 

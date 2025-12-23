@@ -2,8 +2,8 @@
   <img :src="src" :alt="alt" class="social-image-atom" />
 </template>
 
-<script setup>
-import { defineProps } from 'vue'
+<script setup lang="ts">
+
 
 const props = defineProps({
   src: String,

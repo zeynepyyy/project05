@@ -4,9 +4,10 @@ import type { CartItem, Product } from '~/types';
 
 export const useCartStore = defineStore('cart', {
     state: () => ({
-        items: [] as any[],
+        items: [] as CartItem[],
         isSideCartOpen: false,
         loading: false,
+        // Using Partial or loose type here because lastAddedItem might be just the product or a wrapper
         lastAddedItem: null as any | null
     }),
   getters: {
@@ -31,7 +32,7 @@ export const useCartStore = defineStore('cart', {
             localStorage.setItem('cart-items', JSON.stringify(this.items));
         }
     },
-    addToCart(product: any, qty: number = 1) {
+    addToCart(product: Product, qty: number = 1) {
       const existingItem = this.items.find((i) => i.product.id === product.id)
       if (existingItem) {
         existingItem.quantity = (existingItem.quantity || 1) + qty
